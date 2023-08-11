@@ -1,5 +1,13 @@
 #include <stdio.h>
 
+/**
+ * main - Entry point
+ *
+ * Description: print alphabet in lowercase then in uppercase
+ *
+ * Return: Alaways 0 (Succes)
+*/
+
 int main(void)
 {
 	char lowercase = 'a';
