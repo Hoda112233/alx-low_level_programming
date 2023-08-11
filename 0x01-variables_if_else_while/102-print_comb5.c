@@ -5,7 +5,6 @@
  *
  * Description: Prints all possible combinations
  * of two two-digit numbers separated by comma and space.
- * Numbers should be printed in ascending order with two digits.
  *
  * Return: 0 (Success)
  */
