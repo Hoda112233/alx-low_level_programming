@@ -1,4 +1,4 @@
-#include "main.c"
+#include "main.h"
 
 /**
  * main - starting
@@ -18,3 +18,4 @@ int main(void)
 		_putchar(str[ch]);
 			_putchar('\n');
 	return (0);
+}
