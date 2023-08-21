@@ -3,28 +3,29 @@
 /**
  * main - Entry point
  *
- * Description: Generates and prints the first 50 Fibonacci nums,
- * starting with 1 and 2. Shows the sequence and its calculation
- * using standard library.
+ * Description: prints the first 50 Fibonacci numbers
+ * starting with 1 and 2, followed by a new line
+ *
  * Return: Alaways 0 (success)
 */
 
 int main(void)
 {
-	unsigned int fib1 = 1, fib2 = 2, nextFib;
-	int i;
+	int count;
+	unsigned long fib1 = 0, fib2 = 1, sum;
 
-	printf("%d, %d", fib1, fib2);
-
-	for (int i = 2; i < 50; i++)
+	for (count = 0; count < 50; count++)
 	{
-		nextFib = fib1 + fib2;
-		printf(", %d", nextFib);
+		sum = fib1 + fib2;
+		printf("%1u", sum);
 
 		fib1 = fib2;
-		fib2 = nextFib;
+		fib2 = sum;
 
+		if (count == 49)
+			printf("\n");
+		else
+			printf(", ");
 	}
-	printf("\n");
 	return (0);
 }
