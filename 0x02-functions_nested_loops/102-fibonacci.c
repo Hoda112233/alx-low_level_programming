@@ -11,7 +11,7 @@
 
 int main(void)
 {
-	unsigned long int fib1 = 1, fib2 = 2, nextFib;
+	unsigned int fib1 = 1, fib2 = 2, nextFib;
 
 	printf("%d, %d", fib1, fib2);
 
