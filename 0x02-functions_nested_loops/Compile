@@ -1,0 +1,20 @@
+
+r.txt
+102-fibonacci.c: In function ‘main’:
+102-fibonacci.c:16:9: error: ISO C90 does not support the ‘ll’ gnu_printf length modifier [-Werror=format=]
+   16 |  printf("%llu, %llu", fib1, fib2);
+      |         ^~~~~~~~~~~~
+102-fibonacci.c:16:13: error: format ‘%llu’ expects argument of type ‘long long unsigned int’, but argument 2 has type ‘long unsigned int’ [-Werror=format=]
+   16 |  printf("%llu, %llu", fib1, fib2);
+      |          ~~~^         ~~~~
+      |             |         |
+      |             |         long unsigned int
+      |             long long unsigned int
+      |          %lu
+102-fibonacci.c:16:9: error: ISO C90 does not support the ‘ll’ gnu_printf length modifier [-Werror=format=]
+   16 |  printf("%llu, %llu", fib1, fib2);
+      |         ^~~~~~~~~~~~
+102-fibonacci.c:16:19: error: format ‘%llu’ expects argument of type ‘long long unsigned int’, but argument 3 has type ‘long unsigned int’ [-Werror=format=]
+   16 |  printf("%llu, %llu", fib1, fib2);
+      |                ~~~^         ~~~~
+      |...
