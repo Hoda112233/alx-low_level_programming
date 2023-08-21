@@ -18,7 +18,7 @@ int numLength(int num)
 	while (num)
 	{
 		num = num / 10;
-		length++;
+		length += 1;
 	}
 	return (length);
 }
@@ -45,15 +45,11 @@ int main(void)
 			initial0s = numLength(mx) - numLength(f1);
 			while (flo > 0 && initial0s > 0)
 			{
-				printf("0");
+				printf("%d", 0);
 				initial0s--;
 			}
 			printf("%lu", f1);
-		}
-		else
-		{
-			printf("%lu", f1);
-		}
+
 		sum = (f1 + f2) % mx;
 		sumo = flo + f20 + (f1 + f2) / mx;
 
@@ -62,7 +58,7 @@ int main(void)
 		flo = f20;
 		f20 = sumo;
 
-		if (count == 98)
+		if (count != 98)
 			printf(", ");
 		else
 			printf("\n");
