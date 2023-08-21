@@ -12,6 +12,7 @@
 int main(void)
 {
 	unsigned int fib1 = 1, fib2 = 2, nextFib;
+	int i;
 
 	printf("%d, %d", fib1, fib2);
 
