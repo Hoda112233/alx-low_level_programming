@@ -13,12 +13,12 @@ int main(void)
 {
 	unsigned long int fib1 = 1, fib2 = 2, nextFib;
 
-	printf("%u, %u", fib1, fib2);
+	printf("%d, %d", fib1, fib2);
 
 	for (int i = 2; i < 50; i++)
 	{
 		nextFib = fib1 + fib2;
-		printf(", %u", nextFib);
+		printf(", %d", nextFib);
 
 		fib1 = fib2;
 		fib2 = nextFib;
