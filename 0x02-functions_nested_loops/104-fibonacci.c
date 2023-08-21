@@ -17,12 +17,12 @@ int main(void)
 	unsigned long fib1 = 1, fib2 = 2, nextFib;
 	int count;
 
-	printf("%lu, %lu", fib1, fib2);
+	printf("%.0f, %.0f", fib1, fib2);
 
 	for (count = 2; count < 98; count++)
 	{
 		nextFib = fib1 + fib2;
-		printf(", %lu", nextFib);
+		printf(", %.0f", nextFib);
 
 		fib1 = fib2;
 		fib2 = nextFib;
