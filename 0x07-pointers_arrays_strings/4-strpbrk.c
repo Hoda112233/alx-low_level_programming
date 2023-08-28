@@ -11,9 +11,10 @@
  */
 char *_strpbrk(char *s, char *accept)
 {
-	int x = 0, y;
-	char *p = '\0';
+	int x, y;
+	char *p;
 
+	x = 0;
 	while (s[x] != '\0')
 	{
 		y = 0;
@@ -28,5 +29,5 @@ char *_strpbrk(char *s, char *accept)
 		}
 		x++;
 	}
-	return (p);
+	return (0);
 }
