@@ -11,8 +11,8 @@
  */
 char *_strpbrk(char *s, char *accept)
 {
-	int x, y;
-	char *p;
+	int x = 0, y;
+	char *p = NULL;
 
 	while (s[x] != '\0')
 	{
@@ -22,7 +22,7 @@ char *_strpbrk(char *s, char *accept)
 			if (s[x] == accept[y])
 			{
 				p = &s[x];
-				return;
+				return (P);
 			}
 			y++;
 		}
