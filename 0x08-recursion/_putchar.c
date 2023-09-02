@@ -5,11 +5,9 @@
  *
  * @c: The character to be written
  *
- * Return: On success, returns the written character.
- * On error, returns -1.
-*/
-
-int _putchar(char c);
+ * Return: On success, returns the written character. On error, returns -1.
+ */
+int _putchar(char c)
 {
-	return (write(1, &c, 1));
+    return (write(1, &c, 1));
 }
