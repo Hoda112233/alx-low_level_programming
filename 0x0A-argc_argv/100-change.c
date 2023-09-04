@@ -15,13 +15,14 @@ int main(int argc, char *argv[])
 	if (argc == 2)
 	{
 		int i, totalCoins = 0, amount = atoi(argv[1]);
+		int cents[] = {25, 10, 2, 1};
 
 		for (i = 0; i < 5; i++)
 		{
 			if (amount >= coinValues[i])
 			{
 				totalCoins += amount / coinValues[i];
-				amount %= coinValues[i];
+				amount = amount % coinValues[i];
 			}
 
 			if (amount % coinValues[i] == 0)
