@@ -12,37 +12,29 @@
 
 int main(int argc, char *argv[])
 {
-if (argc != 2)
-{
-printf("Error\n");
-return (1);
-}
+	if (argc == 2)
+	{
+		int i, totalCoins = 0, amount = atoi(argv[1]);
 
-int cents = atoi(argv[1]);
+		for (i = 0; i < 5; i++)
+		{
+			if (amount >= coinValues[i])
+			{
+				totalCoins += amount / coinValues[i];
+				amount %= coinValues[i];
+			}
 
-if (cents < 0)
-{
-printf("0\n");
-return (0);
-}
-
-int coins[] = {25, 10, 5, 2, 1};
-int coin_count = 0;
-int i = 0;
-
-while (cents > 0)
-{
-if (cents >= coins[i])
-{
-cents -= coins[i];
-coin_count++;
-}
-else
-{
-i++;
-}
-}
-
-printf("%d\n", coin_count);
-return (0);
+			if (amount % coinValues[i] == 0)
+			{
+				break;
+			}
+		}
+		printf("%d\n", totalCoins);
+	}
+	else
+	{
+		printf("Error\n");
+		return (1);
+	}
+	return (0);
 }
