@@ -15,9 +15,9 @@ int main(int argc, char *argv[])
 	if (argc == 2)
 	{
 		int i, totalCoins = 0, amount = atoi(argv[1]);
-		int cents[] = {25, 10, 2, 1};
+		int coinValues[] = {25, 10, 2, 1};
 
-		for (i = 0; i < 5; i++)
+		for (i = 0; i < 4; i++)
 		{
 			if (amount >= coinValues[i])
 			{
