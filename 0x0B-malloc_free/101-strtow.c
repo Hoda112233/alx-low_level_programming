@@ -41,6 +41,7 @@ char *alloc_word(char *start, char *end)
 {
 int len = end - start;
 char *word = (char *)malloc((len + 1) * sizeof(char));
+int i;
 
 if (word == NULL)
 return (NULL);
@@ -69,13 +70,14 @@ if (word_count == 0)
 return (NULL);
 
 char **words = (char **)malloc((word_count + 1) * sizeof(char *));
+int word_index = 0;
+int i = 0;
+
 if (words == NULL)
 return (NULL);
 
 words[word_count] = NULL;
 
-int word_index = 0;
-int i = 0;
 while (str[i])
 {
 while (str[i] == ' ')
