@@ -65,11 +65,11 @@ char **strtow(char *str)
 if (str == NULL || *str == '\0')
 return (NULL);
 
-word_count = wrdcnt(str);
+wrddcnt = wrdcnt(str);
 if (word_count == 0)
 return (NULL);
 
-char **words = (char **)malloc((word_count + 1) * sizeof(char *));
+char *words = (char **)malloc((word_count + 1) * sizeof(char *));
 int word_index = 0;
 int i = 0;
 
@@ -88,11 +88,11 @@ if (str[i] && str[i] != ' ')
 char *start = &str[i];
 while (str[i] && str[i] != ' ')
 i++;
-char *end = &str[i];
+end = &str[i];
 words[word_index] = alloc_word(start, end);
 if (words[word_index] == NULL)
 {
-for (int j = 0; j < word_index; j++)
+for (j = 0; j < word_index; j++)
 free(words[j]);
 free(words);
 return (NULL);
