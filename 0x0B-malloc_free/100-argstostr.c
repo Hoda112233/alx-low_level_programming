@@ -12,38 +12,26 @@
 
 char *argstostr(int ac, char **av)
 {
-if (ac == 0 || av == NULL)
+char *concatenated;
+int len1 = 0, len2 = 0, i;
+
+if (s1 == NULL)
+s1 = "";
+if (s2 == NULL)
+s2 = "";
+
+len1 = _strlen(s1);
+len2 = _strlen(s2);
+concatenated = malloc((len1 + len2 + 1) * sizeof(char));
+
+if (concatenated == NULL)
 return (NULL);
 
-int i, j, len = 0;
-char *str, *concat;
+for (i = 0; i < len1; i++)
+concatenated[i] = s1[i];
 
-for (i = 0; i < ac; i++)
-{
-for (j = 0; av[i][j] != '\0'; j++)
-{
-len++;
-}
-len++;
-}
-str = malloc(len *sizeof(char) + 1);
+for (i = 0; i <= len2; i++)
+concatenated[i + len1] = s2[i];
 
-if (str == NULL)
-return (NULL);
-
-concat = str;
-
-for (i = 0; i < ac; i++)
-{
-for (j = 0; av[i][j] != '\0'; j++)
-{
-*str = av[i][j];
-str++;
-}
-*str = '\n';
-str++;
-}
-
-*str = '\0';
-return (concat);
+return (concatenated);
 }
