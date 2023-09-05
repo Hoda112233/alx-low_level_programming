@@ -30,6 +30,29 @@ return (n);
 }
 
 /**
+ * alloc_word - Allocate memory for a word and copy it.
+ * @start: The start of the word.
+ * @end: The end of the word.
+ *
+ * Return: A newly allocated word.
+*/
+
+char *alloc_word(char *start, char *end)
+{
+int len = end - start;
+char *word = (char *)malloc((len + 1) * sizeof(char));
+
+if (word == NULL)
+return (NULL);
+
+for (int i = 0; i < len; i++)
+word[i] = start[i];
+word[len] = '\0';
+
+return (word);
+}
+
+/**
  * strtow - Split a string into words.
  * @str: The string to split.
  *
@@ -38,23 +61,21 @@ return (n);
 
 char **strtow(char *str)
 {
-int i, j, k, wc = 0;
-char **w;
-
 if (str == NULL || *str == '\0')
 return (NULL);
 
-wc = wrdcnt(str);
-if (wc == 0)
+int word_count = wrdcnt(str);
+if (word_count == 0)
 return (NULL);
 
-w = (char **)malloc((wc + 1) * sizeof(char *));
-if (w == NULL)
+char **words = (char **)malloc((word_count + 1) * sizeof(char *));
+if (words == NULL)
 return (NULL);
 
-w[wc] = NULL;
+words[word_count] = NULL;
 
-i = 0;
+int word_index = 0;
+int i = 0;
 while (str[i])
 {
 while (str[i] == ' ')
@@ -62,26 +83,21 @@ i++;
 
 if (str[i] && str[i] != ' ')
 {
-j = i;
-while (str[j] && str[j] != ' ')
-j++;
-w[wc - 1] = (char *)malloc((j - i + 1) * sizeof(char));
-if (w[wc - 1] == NULL)
+char *start = &str[i];
+while (str[i] && str[i] != ' ')
+i++;
+char *end = &str[i];
+words[word_index] = alloc_word(start, end);
+if (words[word_index] == NULL)
 {
-for (k = 0; k < wc - 1; k++)
-free(w[k]);
-free(w);
+for (int j = 0; j < word_index; j++)
+free(words[j]);
+free(words);
 return (NULL);
 }
-
-for (k = 0; k < j - i; k++)
-w[wc - 1][k] = str[i + k];
-w[wc - 1][k] = '\0';
-
-wc--;
-i = j;
+word_index++;
 }
 }
 
-return (w);
+return (words);
 }
