@@ -46,7 +46,7 @@ int i;
 if (word == NULL)
 return (NULL);
 
-for (int i = 0; i < len; i++)
+for (i = 0; i < len; i++)
 word[i] = start[i];
 word[len] = '\0';
 
@@ -65,7 +65,7 @@ char **strtow(char *str)
 if (str == NULL || *str == '\0')
 return (NULL);
 
-int word_count = wrdcnt(str);
+word_count = wrdcnt(str);
 if (word_count == 0)
 return (NULL);
 
