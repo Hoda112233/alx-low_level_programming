@@ -1,4 +1,5 @@
 #include "main.h"
+#include <string.h>
 
 /**
  * str_concat - concatenates two strings
@@ -7,7 +8,8 @@
  *
  * Return: pointer to newly allocated memory containing concatenated string
  *         or NULL on failure
- */
+*/
+
 char *str_concat(char *s1, char *s2)
 {
 char *concatenated;
@@ -18,8 +20,8 @@ s1 = "";
 if (s2 == NULL)
 s2 = "";
 
-len1 = _strlen(s1);
-len2 = _strlen(s2);
+len1 = strlen(s1);
+len2 = strlen(s2);
 concatenated = malloc((len1 + len2 + 1) * sizeof(char));
 
 if (concatenated == NULL)
