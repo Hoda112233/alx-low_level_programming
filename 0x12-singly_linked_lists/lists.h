@@ -20,11 +20,6 @@ typedef struct list_s
 	struct list_s *next;
 } list_t;
 
-typedef struct list_s
-{
-	char *str;
-	unsigned int len;
-	struct list_s *next;
 int _putchar(char c);
 int _strlen(char *s);
 size_t print_list(const list_t *h);
