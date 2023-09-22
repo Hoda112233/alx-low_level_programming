@@ -1,23 +1,6 @@
 #include "lists.h"
 
 /**
- * _strlen - returns length of string
- * @s: sring
- *
- * Return: int
- */
-int _strlen(char *s)
-{
-	int i = 0;
-
-	if (!s)
-		return (0);
-	while (*s++)
-		i++;
-	return (i);
-}
-
-/**
  * print_list - prints linked list
  * @h: pointer
  *
@@ -29,7 +12,10 @@ size_t print_list(const list_t *h)
 
 	while (h)
 	{
-		printf("[%d] %s\n", _strlen(h->str), h->str ? h->str : "(nil)");
+		if (!h->str)
+			printf("[0] (nil)\n");
+		else
+			printf("[%u] %s\n", h->len, h->str);
 		h = h->next;
 		i++;
 	}
